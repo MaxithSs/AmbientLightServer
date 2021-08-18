@@ -1,0 +1,3 @@
+import WallpaperManager
+
+WallpaperManager.get_current_wallpaper()
