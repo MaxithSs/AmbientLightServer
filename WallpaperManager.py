@@ -10,10 +10,13 @@ def get_current_wallpaper():
         image = Image.open('/usr/share/backgrounds/brad-huchteman-stone-mountain.jpg')
         image.show()
 
+        width, height = image.size
+
         rgb_img = image.convert('RGB')
-        r, g, b = rgb_img.getpixel((600, 471))
-        print(r, g, b)
-        print(rgb2hex(r, g, b))
+        for x in range(width):
+            for y in range(height):
+                r, g, b = rgb_img.getpixel((x, y))
+                print(r, g, b)
 
         blur_image = image.filter(PIL.ImageFilter.GaussianBlur(100))
         blur_image.show()
@@ -21,5 +24,5 @@ def get_current_wallpaper():
         print("hello world")
 
 
-def rgb2hex(r, g, b):
+def convert_rgb_to_hex(r, g, b):
     return '#{:02x}{:02x}{:02x}'.format(r, g, b)
