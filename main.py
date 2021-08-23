@@ -1,3 +1,3 @@
-import WallpaperManager
+import Server
 
-WallpaperManager.get_current_wallpaper()
+Server.start_server()
