@@ -9,6 +9,5 @@ class HttpRequestHandler(http.server.SimpleHTTPRequestHandler):
         self.send_response(200)
         self.send_header("Content-type", "text/html")
         self.end_headers()
-        html = f"<html><head></head><body>{ WallpaperManager.get_current_wallpapers_color() }</body></html>"
-        self.wfile.write(bytes(html, "utf8"))
+        self.wfile.write(bytes(WallpaperManager.get_current_wallpapers_color(), "utf8"))
         return
